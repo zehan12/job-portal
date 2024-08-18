@@ -10,10 +10,8 @@ type LandingProps = {
 const LandingLayout: FC<LandingProps> = ({ children }) => {
     return (
         <>
-            <div className="min-h-screen container">
-                <Header />
-                {children}
-            </div>
+            <Header />
+            <div className="min-h-screen container">{children}</div>
             <Footer />
         </>
     );

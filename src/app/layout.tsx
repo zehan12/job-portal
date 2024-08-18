@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/context/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { useTheme } from "next-themes";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={cn(inter.className)}>
-                <ScrollArea className="h-screen" >
+                <ScrollArea className="h-screen">
                     <ThemeProvider
                         attribute="class"
                         defaultTheme="dark"
