@@ -1,5 +1,7 @@
 import { FC, ReactNode } from "react";
 import { Header } from "@/components/header";
+import { Heart } from "lucide-react";
+import { Footer } from "@/components/footer";
 
 type LandingProps = {
     children: ReactNode;
@@ -8,8 +10,11 @@ type LandingProps = {
 const LandingLayout: FC<LandingProps> = ({ children }) => {
     return (
         <>
-            <Header />
-            {children}
+            <div className="min-h-screen container">
+                <Header />
+                {children}
+            </div>
+            <Footer />
         </>
     );
 };
