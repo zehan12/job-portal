@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/context/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useTheme } from "next-themes";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,20 +20,22 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className={cn(inter.className)}>
-                <ScrollArea className="h-screen">
-                    <ThemeProvider
-                        attribute="class"
-                        defaultTheme="dark"
-                        enableSystem
-                        disableTransitionOnChange
-                    >
-                        <div className="grid-background"></div>
-                        {children}
-                    </ThemeProvider>
-                </ScrollArea>
-            </body>
-        </html>
+        <ClerkProvider>
+            <html lang="en">
+                <body className={cn(inter.className)}>
+                    <ScrollArea className="h-screen">
+                        <ThemeProvider
+                            attribute="class"
+                            defaultTheme="dark"
+                            enableSystem
+                            disableTransitionOnChange
+                        >
+                            <div className="grid-background"></div>
+                            {children}
+                        </ThemeProvider>
+                    </ScrollArea>
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }
