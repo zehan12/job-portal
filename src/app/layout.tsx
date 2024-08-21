@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/context/theme-provider";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useTheme } from "next-themes";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Background } from "@/components/common/background";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +31,7 @@ export default function RootLayout({
                             enableSystem
                             disableTransitionOnChange
                         >
-                            <div className="grid-background"></div>
+                            <Background />
                             {children}
                         </ThemeProvider>
                     </ScrollArea>
